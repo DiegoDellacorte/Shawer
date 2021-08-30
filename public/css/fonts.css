@@ -1,0 +1,126 @@
+@font-face{
+	font-family: Montserrat-Black;
+    src: url("../css/Tipografia/Montserrat-Black.ttf")/*IE*/;
+    src: local("Montserrat-Black"), url("../css/Tipografia/Montserrat-Black.ttf") format("truetype");
+}
+@font-face{
+    font-family: Montserrat-BlackItalic;
+    src: url('Tipografia/Montserrat-BlackItalic.ttf');
+    src: local("Montserrat-BlackItalic"), url("../css/Tipografia/Montserrat-BlackItalic.ttf") format("truetype");
+}
+@font-face{
+    font-family: Montserrat-Bold;
+    src: url('Tipografia/Montserrat-Bold.ttf');
+    src: local("Montserrat-Bold"), url("../css/Tipografia/Montserrat-Bold.ttf") format("truetype");
+}
+@font-face{
+    font-family: Montserrat-BoldItalic;
+    src: url('Tipografia/Montserrat-BoldItalic.ttf');
+    src: local("Montserrat-BoldItalic"), url("../css/Tipografia/Montserrat-BoldItalic.ttf") format("truetype");
+}
+@font-face{
+    font-family: Montserrat-ExtraBold;
+    src: url('Tipografia/Montserrat-ExtraBold.ttf');
+    src: local("Montserrat-ExtraBold"), url("../css/Tipografia/Montserrat-ExtraBold.ttf") format("truetype");
+}
+@font-face{
+    font-family: Montserrat-ExtraBoldItalic;
+    src: url('Tipografia/Montserrat-ExtraBoldItalic.ttf');
+    src: local("Montserrat-ExtraBoldItalic"), url("../css/Tipografia/Montserrat-ExtraBoldItalic.ttf") format("truetype");
+}
+@font-face{
+    font-family: Montserrat-ExtraLight;
+    src: url('Tipografia/Montserrat-ExtraLight.ttf');
+    src: local("Montserrat-ExtraLight"), url("../css/Tipografia/Montserrat-ExtraLight.ttf") format("truetype");
+}
+@font-face{
+    font-family: Montserrat-ExtraLightItalic;
+    src: url('Tipografia/Montserrat-ExtraLightItalic.ttf');
+    src: local("Montserrat-ExtraLightItalic"), url("../css/Tipografia/Montserrat-ExtraLightItalic.ttf") format("truetype");
+}
+@font-face{
+    font-family: Montserrat-HairLine;
+    src: url('Tipografia/Montserrat-Hairline.otf');
+    src: local("Montserrat-HairLine"), url("../css/Tipografia/Montserrat-HairLine.otf") format("truetype");
+}
+@font-face{
+    font-family: Montserrat-Light;
+    src: url('Tipografia/Montserrat-Light.ttf');
+    src: local("Montserrat-Light"), url("../css/Tipografia/Montserrat-Light.ttf") format("truetype");
+}
+@font-face{
+     font-family: Montserrat-LightItalic;
+    src: url('Tipografia/Montserrat-LightItalic.ttf');
+    src: local("Montserrat-LightItalic"), url("../css/Tipografia/Montserrat-LightItalic.ttf") format("truetype");
+}
+@font-face{
+    font-family: Montserrat-Medium;
+    src: url('Tipografia/Montserrat-Medium.ttf');
+    src: local("Montserrat-Medium"), url("../css/Tipografia/Montserrat-Medium.ttf") format("truetype");
+}
+@font-face{
+
+    font-family: Montserrat-MediumItalic;
+    src: url('Tipografia/Montserrat-MediumItalic.ttf');
+    src: local("Montserrat-Medium"), url("../css/Tipografia/Montserrat-Medium.ttf") format("truetype");
+}
+@font-face{
+    font-family: Montserrat-Regular;
+    src: url('Tipografia/Montserrat-Regular.otf');
+    src: local("Montserrat-Regular"), url("../css/Tipografia/Montserrat-Regular.otf") format("truetype");
+}
+@font-face{
+     font-family: Montserrat-RegularItalic;
+    src: url('Tipografia/Montserrat-RegularItalic.ttf');
+    src: local("Montserrat-RegularItalic"), url("../css/Tipografia/Montserrat-RegularItalic.ttf") format("truetype");
+}
+@font-face{
+   font-family: Montserrat-SemiBold;
+    src: url('Tipografia/Montserrat-SemiBold.ttf');
+    src: local("Montserrat-SemiBold"), url("../css/Tipografia/Montserrat-SemiBold.ttf") format("truetype");
+}
+@font-face{
+    font-family: Montserrat-SemiBoldItalic;
+    src: url('Tipografia/Montserrat-SemiBoldItalic.ttf');
+    src: local("Montserrat-SemiBoldItalic"), url("../css/Tipografia/Montserrat-SemiBoldItalic.ttf") format("truetype");
+}
+@font-face{
+    font-family: Montserrat-Thin;
+    src: url('Tipografia/Montserrat-Thin.ttf');
+    src: local("Montserrat-Thin"), url("../css/Tipografia/Montserrat-Thin.ttf") format("truetype");
+}
+@font-face{
+    font-family: Montserrat-ThinItalic;
+    src: url('Tipografia/Montserrat-ThinItalic.ttf');
+    src: local("Montserrat-ThinItalic"), url("../css/Tipografia/Montserrat-ThinItalic.ttf") format("truetype");
+}
+@font-face{
+    font-family: Poppins-Black;
+    src: url('Tipografia/Poppins-Black.ttf');
+    src: local("Poppins-Black"), url("../css/Tipografia/Poppins-Black.ttf") format("truetype");
+}
+@font-face{
+    font-family: Poppins-Bold;
+    src: url('Tipografia/Poppins-Bold.ttf');
+    src: local("Poppins-Bold"), url("../css/Tipografia/Poppins-Bold.ttf") format("truetype");
+}
+@font-face{
+    font-family: Poppins-Medium;
+    src: url('Tipografia/Poppins-Medium.ttf');
+    src: local("Poppins-Medium"), url("../css/Tipografia/Poppins-Medium.ttf") format("truetype");
+}
+@font-face{
+    font-family: Poppins-Light;
+    src: url('Tipografia/Poppins-Light.ttf');
+    src: local("Poppins-Light"), url("../css/Tipografia/Poppins-Light.ttf") format("truetype");
+}
+@font-face{
+    font-family: Poppins-Regular;
+    src: url('Tipografia/Poppins-Regular.ttf');
+    src: local("Poppins-Regular"), url("../css/Tipografia/Poppins-Regular.ttf") format("truetype");
+}
+@font-face{
+    font-family: Poppins-Italic;
+    src: url('Tipografia/Poppins-Italic.ttf');
+    src: local("Poppins-Italic"), url("../css/Tipografia/Poppins-Italic.ttf") format("truetype");
+}

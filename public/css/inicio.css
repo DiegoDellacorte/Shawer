@@ -1,0 +1,13 @@
+.carousel-indicators > li {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: #FDFDFD;
+}
+.carousel-indicators > li.active {
+       background-color: #30A0DB;
+}
+.ContenedorBuscador{
+    height: 146px;
+    background-color: #17313A;
+}
