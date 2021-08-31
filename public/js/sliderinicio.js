@@ -103,7 +103,7 @@ function editarslider(id) {
             success: function (response) {
                 console.log(response);
                 $('#id').val(id);
-                var path= "../images/sliders/";
+                var path= "../../images/sliders/";
                $('#preview-img').attr('src',path+response.imagen);
                 $('#editar-orden').val(response.orden);
                 $('#summernote-edit').summernote('code', response.texto);

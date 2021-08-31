@@ -68,6 +68,32 @@ case 'verusuarios':
                         </ul>
                     </div>
                 </li>
+                <li class="nav-item {{$mamparas_active ?? ''}} ">
+                    <a data-toggle="collapse" href="#mamparas">
+                        <i class="fas fa-building"></i>
+                        <p>Mamparas</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="mamparas">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{route('mamparas.sliders')}}">
+                                        <span class="sub-item">Sliders</span>
+                                </a>
+                            </li>
+                            <li>
+                            <a href="{{route('mamparas.editarContenido')}}">
+                                <span class="sub-item">Contenido Seccion</span>
+                            </a>
+                            </li>
+                            <li>
+                                <a href="{{route('mamparas.index')}}">
+                                    <span class="sub-item">Productos</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                 <li class="nav-item {{$barandas_active ?? ''}} ">
                     <a data-toggle="collapse" href="#barandas">
                         <i class="fas fa-building"></i>
@@ -146,7 +172,27 @@ case 'verusuarios':
                         </ul>
                     </div>
                 </li>
-            
+                <li class="nav-item {{$proyectos_active ?? ''}} ">
+                    <a data-toggle="collapse" href="#proyectos">
+                        <i class="fas fa-building"></i>
+                        <p>Proyectos</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="proyectos">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{route('proyectos.sliders')}}">
+                                        <span class="sub-item">Sliders</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('proyectos.index')}}">
+                                    <span class="sub-item">Proyectos</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                  <li class="nav-item {{$contacto_active ?? ''}} ">
                     <a data-toggle="collapse" href="#contacto">
                         <i class="fas fa-address-book"></i>

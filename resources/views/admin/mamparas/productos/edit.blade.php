@@ -16,52 +16,58 @@
             <div class="card">
                 <div class="card-header">
                     <div>
-                        Agregar Hidromasaje
+                        Editar Mampara
                     </div>
                     <div class="float-right">
-                        <a class="btn btn-outline-info" href="{{route('hidromasajes.index')}}">
+                        <a class="btn btn-outline-info" href="{{route('mamparas.index')}}">
                             Volver
                         </a>
                     </div>  
                 </div>
                 <div class="card-body">
-                    <form action="{{route('hidromasajes.store')}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('mamparas.update',$mampara->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
-                       
+                       @method('PUT')
                     <div class="row">
+                        
                         <div class="col-md-12">
                             <h6>Orden</h6>
-                            <input type="text" class="form-control" name="orden">
+                            <input type="text" class="form-control" name="orden" value="{{$mampara->orden}}">
                             <h6>Titulo</h6>
-                            <input type="text" class="form-control" name="titulo" >
+                            <input type="text" class="form-control" name="titulo" value="{{$mampara->titulo}}" >
                             <h6>Texto</h6>
-                            <textarea name="texto"></textarea>
+                            <textarea name="texto">{!!$mampara->texto!!}</textarea>
                             <h6>Imagen Uno</h6>
+                            <img src="{{asset(Storage::url($mampara->img_uno))}}" class="img-fluid">
+                            <br>
                             <input type="file"  name="img1">
                             <br>
                             <small class="text-muted">Resolución Recomendada: 394px * 267px</small>
                             <h6>Imagen Dos</h6>
+                            <img src="{{asset(Storage::url($mampara->img_dos))}}" class="img-fluid">
+                            <br>
                             <input type="file"  name="img2">
                             <br>
                             <small class="text-muted">Resolución Recomendada: 394px * 267px</small>
                             <h6>Imagen Principal</h6>
+                            <img src="{{asset(Storage::url($mampara->img_principal))}}" class="img-fluid">
+                            <br>
                             <input type="file"  name="imgPrincipal">
                             <br>
                             <small class="text-muted">Resolución Recomendada: 1366px * 768px</small>
                             <h6>Tabla</h6>
-                            <textarea name="tabla"></textarea>
+                            <textarea name="tabla">{!!$mampara->tabla!!}</textarea>
                             <h6>Destacado</h6>
                             <select class="form-control" name="destacado">
-                                <option value="1">SI</option>
-                                <option value="0">NO</option>
+                                <option value="1" {{$mampara->destacado==true ? 'selected' : '' }}>SI</option>
+                                <option value="0" {{$mampara->destacado==false ? 'selected' : '' }}>NO</option>
                             </select>
                             <h6>Orden Destacado</h6>
-                            <input type="text" class="form-control" name="orden_destacado">
+                            <input type="text" class="form-control" name="orden_destacado" value="{{$mampara->orden_destacado}}">
                         </div>
-                       
                         <div class="col-md-12 text-center mt-4">
                             <button class="btn btn-info" type="submit">
-                                Agregar
+                                Modificar
                             </button>
                         </div>
                     </div>

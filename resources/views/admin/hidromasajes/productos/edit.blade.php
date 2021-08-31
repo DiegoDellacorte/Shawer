@@ -57,6 +57,13 @@
                             <small class="text-muted">Resolución Recomendada: 1366px * 768px</small>
                             <h6>Tabla</h6>
                             <textarea name="tabla">{!!$hidromasaje->tabla!!}</textarea>
+                            <h6>Destacado</h6>
+                            <select class="form-control" name="destacado">
+                                <option value="1" {{$hidromasaje->destacado==true ? 'selected' : '' }}>SI</option>
+                                <option value="0" {{$hidromasaje->destacado==false ? 'selected' : '' }}>NO</option>
+                            </select>
+                            <h6>Orden Destacado</h6>
+                            <input type="text" class="form-control" name="orden_destacado" value="{{$hidromasaje->orden_destacado}}">
                         </div>
                         <div class="col-md-12 text-center mt-4">
                             <button class="btn btn-info" type="submit">

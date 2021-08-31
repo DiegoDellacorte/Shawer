@@ -16,16 +16,16 @@
             <div class="card">
                 <div class="card-header">
                     <div>
-                        Agregar Hidromasaje
+                        Agregar Mampara
                     </div>
                     <div class="float-right">
-                        <a class="btn btn-outline-info" href="{{route('hidromasajes.index')}}">
+                        <a class="btn btn-outline-info" href="{{route('mamparas.index')}}">
                             Volver
                         </a>
                     </div>  
                 </div>
                 <div class="card-body">
-                    <form action="{{route('hidromasajes.store')}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('mamparas.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                        
                     <div class="row">

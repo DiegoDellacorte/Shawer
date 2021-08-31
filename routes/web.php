@@ -55,7 +55,18 @@ Route::middleware(['auth'])->group(function(){
      Route::get('home/inicio/editarGaleria/{id}','InicioController@EditarImagen');
      Route::put('home/inicio/actualizarGaleria/{id}','InicioController@ActualizarImagen');
      Route::delete('home/inicio/eliminarGaleria/{id}','InicioController@EliminarImagen');
-    //Barandas
+     //Mamparas
+     Route::resource('home/edit/mamparas', 'MamparasController');
+     Route::prefix('home/mamparas')->group(function () {
+         Route::get('sliders','MamparasController@sliders')->name('mamparas.sliders');
+         Route::get('editarContenido','MamparasController@editarContenido')->name('mamparas.editarContenido');
+         Route::put('actualizarContenido','MamparasController@actualizarContenido')->name('mamparas.actualizarContenido');
+         Route::post('agregarslider','SlidersController@AgregarSlider');
+         Route::get('editarslider/{id}','SlidersController@EditarSlider');
+         Route::delete('eliminarslider/{id}','SlidersController@EliminarSlider');
+         Route::put('actualizarslider/{id}','SlidersController@ActualizarSlider');
+     });
+     //Barandas
     Route::prefix('home/barandas')->group(function () {
         Route::get('sliders','BarandasController@sliders')->name('barandas.sliders');
         Route::post('agregarslider','SlidersController@AgregarSlider');
@@ -87,6 +98,18 @@ Route::middleware(['auth'])->group(function(){
         Route::put('actualizarHidromasaje/{id}','HidromasajesController@update')->name('hidromasajes.update');
         Route::delete('eliminarHidromasaje/{id}','HidromasajesController@delete');            
     });
+     //Platos de Ducha
+     Route::resource('home/edit/platos', 'PlatosController');
+     Route::prefix('home/platos')->group(function () {
+         Route::get('sliders','PlatosController@sliders')->name('platos.sliders');
+         Route::get('editarContenido','PlatosController@editarContenido')->name('platos.editarContenido');
+         Route::put('actualizarContenido','PlatosController@actualizarContenido')->name('platos.actualizarContenido');
+         Route::post('agregarslider','SlidersController@AgregarSlider');
+         Route::get('editarslider/{id}','SlidersController@EditarSlider');
+         Route::delete('eliminarslider/{id}','SlidersController@EliminarSlider');
+         Route::put('actualizarslider/{id}','SlidersController@ActualizarSlider');
+     });
+    //Vanitorys
     Route::prefix('home/vanitorys')->group(function () {
         Route::get('sliders','VanitorysController@sliders')->name('vanitorys.sliders');
         Route::post('agregarslider','SlidersController@AgregarSlider');
@@ -101,6 +124,15 @@ Route::middleware(['auth'])->group(function(){
         Route::get('editarVanitory/{id}','VanitorysController@edit')->name('vanitorys.edit');
         Route::put('actualizarVanitory/{id}','VanitorysController@update')->name('vanitorys.update');
         Route::delete('eliminarVanitory/{id}','VanitorysController@delete');    
+    });
+    //Proyectos
+    Route::resource('home/edit/proyectos', 'ProyectosController');
+    Route::prefix('home/proyectos')->group(function () {
+        Route::get('sliders','ProyectosController@sliders')->name('proyectos.sliders');
+        Route::post('agregarslider','SlidersController@AgregarSlider');
+        Route::get('editarslider/{id}','SlidersController@EditarSlider');
+        Route::delete('eliminarslider/{id}','SlidersController@EliminarSlider');
+        Route::put('actualizarslider/{id}','SlidersController@ActualizarSlider');
     });
      //Contacto
     Route::group(['prefix' => 'home/contacto'], function () {

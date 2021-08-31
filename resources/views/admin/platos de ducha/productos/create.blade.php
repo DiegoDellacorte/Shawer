@@ -16,16 +16,16 @@
             <div class="card">
                 <div class="card-header">
                     <div>
-                        Agregar Hidromasaje
+                        Agregar Plato de Ducha
                     </div>
                     <div class="float-right">
-                        <a class="btn btn-outline-info" href="{{route('hidromasajes.index')}}">
+                        <a class="btn btn-outline-info" href="{{route('platos.index')}}">
                             Volver
                         </a>
                     </div>  
                 </div>
                 <div class="card-body">
-                    <form action="{{route('hidromasajes.store')}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('platos.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                        
                     <div class="row">
@@ -50,13 +50,6 @@
                             <small class="text-muted">Resolución Recomendada: 1366px * 768px</small>
                             <h6>Tabla</h6>
                             <textarea name="tabla"></textarea>
-                            <h6>Destacado</h6>
-                            <select class="form-control" name="destacado">
-                                <option value="1">SI</option>
-                                <option value="0">NO</option>
-                            </select>
-                            <h6>Orden Destacado</h6>
-                            <input type="text" class="form-control" name="orden_destacado">
                         </div>
                        
                         <div class="col-md-12 text-center mt-4">
