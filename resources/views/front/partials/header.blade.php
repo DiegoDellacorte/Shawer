@@ -45,7 +45,7 @@ switch ($routeName) {
                 <a class="nav-link {{$productos_active ?? ''}}" href="{{route('barandas')}}">Barandas</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link {{$servicios_active ?? ''}}" href="{{route('servicios')}}">Hidrosajes</a>
+                <a class="nav-link {{$servicios_active ?? ''}}" href="{{route('hidromasajes')}}">Hidrosajes</a>
                 </li>
                 <li class="nav-item {{$clientes_active ?? ''}}">
                     <a class="nav-link" href="{{route('clientes')}}">Platos de Ducha</a>

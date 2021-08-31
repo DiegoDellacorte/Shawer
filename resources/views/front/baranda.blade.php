@@ -1,5 +1,6 @@
 @extends('layouts.plantilla')
 @section('contenido')
+    <!--Img Principal-->
     <div class="container-fluid">
         <div class="row ps-5" style="background-image:linear-gradient(rgba(255, 255, 255, 0.1),rgba(0, 0, 0, 0.8)), url({{asset(Storage::url($baranda->img_principal))}});
             height:514px;
@@ -11,7 +12,7 @@
                 <div class="tituloCategoria ms-0" style="">Barandas</div>
                 {{$baranda->titulo}}
                 <div class="ms-0" style="color:white;margin-top:40px; font-family: 'Gotham-Book';font-size:16px">
-                    INICIO|BARANDAS |{{$baranda->titulo}}
+                    INICIO|BARANDAS|{{$baranda->titulo}}
                 </div>
             </div>
           
@@ -24,7 +25,7 @@
         <div class="row">
             <div class="col-md-12 mt-5 text-center animate__animated animate__fadeInRight animate__slow">
                 <div class="seccion-titulo">
-                    BARANDAS
+                    {{$baranda->titulo}}
                 </div>
             </div>
             <div class="col-md-6 mt-5 animate__animated animate__fadeInRight animate__slow">
@@ -40,4 +41,30 @@
             </div>
         </div>
     </div>
+    <!--Pasamanos-->
+    @if ($baranda->img_pasamanos1!=null || $baranda->img_pasamanos2!=null || $baranda->img_pasamanos3!=null){
+        <div class="container mt-5 animate__animated animate__fadeInRight animate__slow">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div style="font-family:'Gotham-Light';font-size:22px;color:#333333">
+                        PASAMANOS
+                    </div>
+                </div>
+                <div class="col-md-4 mt-5">
+                    <img class="img-fluid d-block mx-auto" src="{{asset(Storage::url($baranda->img_pasamanos1))}}">
+                    
+                </div>
+                <div class="col-md-4 mt-5">
+                    <img class="img-fluid d-block mx-auto" src="{{asset(Storage::url($baranda->img_pasamanos2))}}">
+                    
+                </div>
+                <div class="col-md-4 mt-5">
+                    <img class="img-fluid d-block mx-auto" src="{{asset(Storage::url($baranda->img_pasamanos3))}}">
+                    
+                </div>
+            </div>
+        </div>
+    }
+        
+    @endif
 @endsection

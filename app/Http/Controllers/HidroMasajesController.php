@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contacto;
 use App\Models\Hidromasaje;
+use App\Models\Logos;
 use App\Models\Seccion;
 use App\Models\Sliders;
 use Illuminate\Http\Request;
@@ -86,5 +88,14 @@ class HidroMasajesController extends Controller
         $hidromasaje=Hidromasaje::find($id);
         Storage::delete($hidromasaje->img_uno,$hidromasaje->img_dos,$hidromasaje->img_principal,$hidromasaje->img_pasamanos1,$hidromasaje->img_pasamanos2,$hidromasaje->img_pasamanos3);
         $hidromasaje->delete();
+    }
+    public function vistaSeccion(){
+        $contactos=Contacto::all();
+        $iconoSup=Logos::find(1);
+        $iconoInf=Logos::find(2);
+        $sliders= Sliders::where('pagina','hidromasajes')->orderby('orden',"ASC")->get();
+        $seccionHidromasaje=Seccion::find(1);
+        $hidromasajes=Hidromasaje::orderby('orden',"ASC")->get();
+        return view('front.hidromasajes',compact('contactos','iconoSup','iconoInf','sliders','seccionHidromasaje','hidromasajes'));
     }
 }

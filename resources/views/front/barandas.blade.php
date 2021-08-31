@@ -138,15 +138,34 @@
             <div class="col-md-12 text-center mt-5 Seccion-tituloColeccion mb-5">
                 DESCUBRI TODA LA COLECCI&Oacute;N
             </div>
+            @php
+                $i=1;
+            @endphp
             @foreach ($barandas as $baranda)
                 <div class="col-md-4 mx-0 px-0 contenedor">
                     <a href="{{route('baranda',$baranda->id)}}" style="text-decoration:none">
+                    @if (!$loop->first)
+                    @php
+                        $imagen=asset('images/barandas/0'.$i.'.jpg');
+                    @endphp
+                    <div  class="image" style="background-image: url({{$imagen}});
+                        background-repeat:no-repeat;
+                        background-position:center;
+                        height:316px">
+
+                    </div>  
+                    @php
+                        $i++;
+                    @endphp
+                    @else 
                     <div  class="image" style="background-image: url({{asset(Storage::url($baranda->img_principal))}});
                         background-repeat:no-repeat;
                         background-position:center;
                         height:316px">
 
                     </div>  
+                    @endif
+                  
                     <div class="overlay">
                        
                         <div class="text">       
