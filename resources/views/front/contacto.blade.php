@@ -34,7 +34,8 @@
 </style>
 <div class="container py-5 ">
     <div class="row">
-        <div class="col-md-8 d-block ms-auto">
+        <div class="animate__animated animate__fadeInRight animate__slow">
+        <div class="col-md-8 d-block ms-auto   ">
             @if (session()->has('success'))
             <div class="alert alert-success">{{session()->get('success')}}</div>
             @endif
@@ -91,7 +92,8 @@
                 </form>
             </div>
         </div>
-        <img src="{{asset('images/imgContacto.png')}}" class="img-fluid" style="width: 500px;height:394px;z-index:1000;position: relative;top:-120px" >
+        </div>
+        <img src="{{asset('images/imgContacto.png')}}" class="img-fluid animate__animated animate__fadeInLeft animate__slow" style="width: 500px;height:394px;z-index:1000;position: relative;top:-120px" >
     </div>
     {{-- <div class="row">
         <div class="col-xl-4 col-lg-4 col-md-4">

@@ -144,3 +144,8 @@
     src: url('Tipografia/Gotham-XLight.otf');
     src: local("Gotham-XLight"), url("../css/Tipografia/Gotham-XLight.otf") format("truetype");
 }
+@font-face{
+    font-family: Gotham-Book;
+    src: url('Tipografia/GothamBook.ttf');
+    src: local("GothamBook"), url("../css/Tipografia/GothamBook.ttf") format("truetype");
+}

@@ -6,6 +6,8 @@ use App\Models\Baranda;
 use App\Models\SeccionBaranda;
 use App\Models\Sliders;
 use Illuminate\Http\Request;
+use App\Models\Contacto;
+use App\Models\Logos;
 use Illuminate\Support\Facades\Storage;
 
 class BarandasController extends Controller
@@ -84,6 +86,13 @@ class BarandasController extends Controller
         $baranda=Baranda::find($id);
         return view('admin.barandas.editarBaranda',compact('baranda'));
     }
+    public function show($id){
+        $baranda=Baranda::find($id);
+        $contactos=Contacto::all();
+        $iconoSup=Logos::find(1);
+        $iconoInf=Logos::find(2);
+        return view('front.baranda',compact('baranda','contactos','iconoSup','iconoInf'));
+    }
     public function update(Request $request,$id){
         $baranda=Baranda::find($id);
         
@@ -116,5 +125,14 @@ class BarandasController extends Controller
         $baranda=Baranda::find($id);
         Storage::delete($baranda->img_uno,$baranda->img_dos,$baranda->img_principal,$baranda->img_pasamanos1,$baranda->img_pasamanos2,$baranda->img_pasamanos3);
         $baranda->delete();
+    }
+    public function vistaBaranda(){
+        $contactos=Contacto::all();
+        $iconoSup=Logos::find(1);
+        $iconoInf=Logos::find(2);
+        $sliders= Sliders::where('pagina','barandas')->orderby('orden',"ASC")->get();
+        $seccionBaranda=SeccionBaranda::all()->first();
+        $barandas=Baranda::orderby('orden',"ASC")->get();
+        return view('front.barandas',compact('contactos','iconoSup','iconoInf','sliders','seccionBaranda','barandas'));
     }
 }

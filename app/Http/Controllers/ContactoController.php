@@ -168,7 +168,7 @@ class ContactoController extends Controller
         $iconoSup=Logos::find(1);
         $iconoInf=Logos::find(2);
       
-        return view('contacto',compact('contactos','iconoSup','iconoInf'));
+        return view('front.contacto',compact('contactos','iconoSup','iconoInf'));
     }
    
 }

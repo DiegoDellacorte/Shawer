@@ -49,7 +49,7 @@
             <small id="" class="form-text text-muted">Ingrese orden, ejemplo: AA,AB,AC,AD</small>
             <label>Imagen</label>
             <input type="file" class="form-control-file" name="imagen" id="imagen" required>
-            <small id="" class="form-text text-muted">Resolucion 1366 * 446px</small>
+            <small id="" class="form-text text-muted">Resolucion 1366 * 769px</small>
             <label>Texto</label>
             <textarea id="summernote" name="textoslider"></textarea>
           </div>
@@ -87,7 +87,7 @@
 							<input type="text" class="form-control" id="editar-orden" placeholder="">
 							<small id="editar-orden2" class="form-text text-muted">Ingrese orden, ejemplo: AA,AB,AC,AD</small>
               <label>Imagen</label>
-              <small id="" class="form-text text-muted">Resolucion 1366 * 446px</small>
+              <small id="" class="form-text text-muted">Resolucion 1366 * 769px</small>
               <img id="preview-img" class="img-fluid" src=""> 
               <input class="form-control-file" type="file" name="editar-imagen" id="editar-imagen">
                <label>Texto</label>

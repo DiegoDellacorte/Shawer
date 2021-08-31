@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="{{asset('css/fonts.css')}}">
     <!--Estilos Plantilla-->
     <link rel="stylesheet" href="{{asset('css/plantilla.css')}}">
+    <!--Estilos Seccion-->
+    <link rel="stylesheet" href="{{asset('css/secciones.css')}}">
     <!--Sweet Alert-->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!--Jquery-->

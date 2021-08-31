@@ -21,6 +21,8 @@ Route::post('solicitarPresupuesto','ContactoController@presupuesto');
 Route::post('buscar','ProductosController@buscar')->name('buscar');
 Route::post('consulta','ContactoController@enviarConsulta')->name('consulta');
 Route::get('/','InicioController@vistaInicio')->name('inicio');
+Route::get('barandas','BarandasController@vistaBaranda')->name('barandas');
+Route::get('baranda/{id}','BarandasController@show')->name('baranda');
 Route::get('empresa','EmpresaController@vistaEmpresa')->name('empresa');
 Route::get('contacto','ContactoController@vistaContacto')->name('contacto');
 Route::get('categorias','CategoriasController@vistaCategorias')->name('categorias');

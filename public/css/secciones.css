@@ -1,0 +1,73 @@
+.seccion-titulo{
+    font-family: 'Gotham-Light';
+    font-size: 35px;
+    color: #333333;
+}
+.seccion-titulo_texto{
+    font-family: 'Gotham-Light';
+    font-size: 21px;
+    color: #707070;
+}
+.seccion-texto_descripcion{
+    font-family: 'Gotham-Book';
+    font-size: 16px;
+    color: #707070;
+}
+.seccion-img_uno{
+    width: 395px;
+    height: 267px;
+}
+.seccion-img_dos{
+    width: 395px;
+    height: 273px;
+}
+.Seccion-tituloColeccion{
+    font-family: 'Gotham-Light';
+    font-size: 25px;
+    color: #333333;
+}
+/*Hover Productos*/
+.contenedor {
+    position: relative;
+   
+  }
+  
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    height: 95%;
+    width: 95%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #D813263D;
+  }
+  
+  .contenedor:hover .overlay {
+    opacity: 1;
+  }
+  
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .Seccion-tituloProducto{
+    font-family: 'Gotham-Light';
+    font-size: 24px;
+    color: #FFFFFF;
+  }

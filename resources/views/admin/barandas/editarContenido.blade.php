@@ -25,8 +25,8 @@
                             <div class="col-md-12">
                                 <h6>Titulo</h6>
                                 <input type="text" class="form-control" name="titulo" value="{{$seccionBaranda->titulo}}">
-                                <h6>Subtitulo</h6>
-                                <input type="text" class="form-control" name="subtitulo" value="{{$seccionBaranda->subtitulo}}">
+                                {{-- <h6>Subtitulo</h6>
+                                <input type="text" class="form-control" name="subtitulo" value="{{$seccionBaranda->subtitulo}}"> --}}
                                 <h6>Texto</h6>
                                 <textarea name="texto">{!!$seccionBaranda->texto!!}</textarea>
                                 <h6>Imagen Uno</h6>
