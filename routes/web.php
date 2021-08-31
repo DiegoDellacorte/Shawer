@@ -17,21 +17,21 @@ use Illuminate\Support\Facades\Storage;
 Route::get('storage-link',function(){
     Artisan::call('storage-link');
 });
-Route::post('solicitarPresupuesto','ContactoController@presupuesto');
-Route::post('buscar','ProductosController@buscar')->name('buscar');
-Route::post('consulta','ContactoController@enviarConsulta')->name('consulta');
-Route::get('/','InicioController@vistaInicio')->name('inicio');
-Route::get('empresa','EmpresaController@vistaEmpresa')->name('empresa');
-Route::get('contacto','ContactoController@vistaContacto')->name('contacto');
-Route::get('categorias','CategoriasController@vistaCategorias')->name('categorias');
-Route::get('categoria/{id}','CategoriasController@show')->name('categoria');
-Route::get('subcategoria/{id}','SubCategoriasController@show')->name('subcategoria');
-Route::get('producto/{id}','ProductosController@show')->name('producto');
-Route::get('servicios','ServiciosController@show')->name('servicios');
-Route::post('formularioServicios','ServiciosController@formularioServicios')->name('servicio.consulta');
-Route::get('clientes','ClientesController@vistaClientes')->name('clientes');
-Route::get('videos','VideosController@vistaVideo')->name('videos');
-Route::get('presupuesto','ProductosController@vistaPresupuesto')->name('presupuesto');
+// Route::post('solicitarPresupuesto','ContactoController@presupuesto');
+// Route::post('buscar','ProductosController@buscar')->name('buscar');
+// Route::post('consulta','ContactoController@enviarConsulta')->name('consulta');
+// Route::get('/','InicioController@vistaInicio')->name('inicio');
+// Route::get('empresa','EmpresaController@vistaEmpresa')->name('empresa');
+// Route::get('contacto','ContactoController@vistaContacto')->name('contacto');
+// Route::get('categorias','CategoriasController@vistaCategorias')->name('categorias');
+// Route::get('categoria/{id}','CategoriasController@show')->name('categoria');
+// Route::get('subcategoria/{id}','SubCategoriasController@show')->name('subcategoria');
+// Route::get('producto/{id}','ProductosController@show')->name('producto');
+// Route::get('servicios','ServiciosController@show')->name('servicios');
+// Route::post('formularioServicios','ServiciosController@formularioServicios')->name('servicio.consulta');
+// Route::get('clientes','ClientesController@vistaClientes')->name('clientes');
+// Route::get('videos','VideosController@vistaVideo')->name('videos');
+// Route::get('presupuesto','ProductosController@vistaPresupuesto')->name('presupuesto');
 Route::get('contacto','ContactoController@vistaContacto')->name('contacto');
 Auth::routes();
 
@@ -124,6 +124,28 @@ Route::middleware(['auth'])->group(function(){
         Route::get('editarVanitory/{id}','VanitorysController@edit')->name('vanitorys.edit');
         Route::put('actualizarVanitory/{id}','VanitorysController@update')->name('vanitorys.update');
         Route::delete('eliminarVanitory/{id}','VanitorysController@delete');    
+    });
+    //Espejos
+    Route::resource('home/edit/espejos', 'EspejosController');
+     Route::prefix('home/espejos')->group(function () {
+         Route::get('sliders','EspejosController@sliders')->name('espejos.sliders');
+         Route::get('editarContenido','EspejosController@editarContenido')->name('espejos.editarContenido');
+         Route::put('actualizarContenido','EspejosController@actualizarContenido')->name('espejos.actualizarContenido');
+         Route::post('agregarslider','SlidersController@AgregarSlider');
+         Route::get('editarslider/{id}','SlidersController@EditarSlider');
+         Route::delete('eliminarslider/{id}','SlidersController@EliminarSlider');
+         Route::put('actualizarslider/{id}','SlidersController@ActualizarSlider');
+     });
+     //InteriorPlacard
+    Route::resource('home/edit/placard', 'InteriorPlacardController');
+    Route::prefix('home/placard')->group(function () {
+        Route::get('sliders','InteriorPlacardController@sliders')->name('placard.sliders');
+        Route::get('editarContenido','InteriorPlacardController@editarContenido')->name('placard.editarContenido');
+        Route::put('actualizarContenido','InteriorPlacardController@actualizarContenido')->name('placard.actualizarContenido');
+        Route::post('agregarslider','SlidersController@AgregarSlider');
+        Route::get('editarslider/{id}','SlidersController@EditarSlider');
+        Route::delete('eliminarslider/{id}','SlidersController@EliminarSlider');
+        Route::put('actualizarslider/{id}','SlidersController@ActualizarSlider');
     });
     //Proyectos
     Route::resource('home/edit/proyectos', 'ProyectosController');

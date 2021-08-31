@@ -2,25 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Plato;
+use App\Models\Espejo;
 use App\Models\Seccion;
 use App\Models\Sliders;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class PlatosController extends Controller
+class EspejosController extends Controller
 {
     public function editarContenido(){
-        $seccionPlatos=Seccion::find(2);
-        return view('admin.platos de ducha.editarContenido',compact('seccionPlatos'));
+        $seccionEspejos=Seccion::find(5);
+        return view('admin.espejos.editarContenido',compact('seccionEspejos'));
    }
    public function actualizarContenido(Request $request){
-       $seccionMamparas=Seccion::find(2);
+       $seccionMamparas=Seccion::find(5);
        if($request->hasFile('img1')){
-           $seccionMamparas->img_uno=$request->file('img1')->store('images/platos');
+           $seccionMamparas->img_uno=$request->file('img1')->store('images/espejos');
        }
        if($request->hasFile('img2')){
-           $seccionMamparas->img_dos=$request->file('img2')->store('images/platos');
+           $seccionMamparas->img_dos=$request->file('img2')->store('images/espejos');
        }
        try {
            $seccionMamparas->update($request->all());
@@ -31,36 +31,36 @@ class PlatosController extends Controller
       
    }
    public function index(){
-       $platos =Plato::orderby('orden',"ASC")->get();
-       return view('admin.platos de ducha.productos.index',compact('platos'));
+       $espejos =Espejo::orderby('orden',"ASC")->get();
+       return view('admin.espejos.productos.index',compact('espejos'));
    }
    public function create(){
-       return view('admin.platos de ducha.productos.create');
+       return view('admin.espejos.productos.create');
    }
    public function store(Request $request){
-       $mampara=new Plato($request->all());
+       $espejos=new Espejo($request->all());
        if($request->hasFile('img1')){
-           $mampara->img_uno=$request->file('img1')->store('images/mamparas');
+           $espejos->img_uno=$request->file('img1')->store('images/espejos');
        }
        if($request->hasFile('img2')){
-           $mampara->img_dos=$request->file('img2')->store('images/mamparas');
+           $espejos->img_dos=$request->file('img2')->store('images/espejos');
        }
        if($request->hasFile('imgPrincipal')){
-           $mampara->img_principal=$request->file('imgPrincipal')->store('images/mamparas');
+           $espejos->img_principal=$request->file('imgPrincipal')->store('images/espejos');
        }
        try {
-           $mampara->save();
-           return back()->with('success',"Plato Agregado");
+           $espejos->save();
+           return back()->with('success',"Espejo Agregado");
        } catch (\Throwable $th) {
            return back()->with('error',$th->getMessage());
        }
    }
    public function edit($id){
-       $plato=Plato::find($id);
-       return view('admin.platos de ducha.productos.edit',compact('plato'));
+       $espejo=Espejo::find($id);
+       return view('admin.espejos.productos.edit',compact('espejo'));
    }
    public function update(Request $request,$id){
-       $mampara=Plato::find($id);
+       $mampara=Espejo::find($id);
        
        if($request->hasFile('img1')){
            $mampara->img_uno=$request->file('img1')->store('images/mamparas');
@@ -87,12 +87,12 @@ class PlatosController extends Controller
      */
     public function destroy($id)
     {
-        $mamparas=Plato::find($id);
+        $mamparas=Espejo::find($id);
        Storage::delete($mamparas->img_uno,$mamparas->img_dos,$mamparas->img_principal);
        $mamparas->delete();
     }
     public function sliders(){
-        $sliders= Sliders::where('pagina','platos')->orderby('orden',"ASC")->get();
-        return view('admin.platos de ducha.sliders',compact('sliders'));
+        $sliders= Sliders::where('pagina','espejos')->orderby('orden',"ASC")->get();
+        return view('admin.espejos.sliders',compact('sliders'));
     }
 }

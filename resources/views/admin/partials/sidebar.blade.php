@@ -20,6 +20,27 @@ case 'hidromasajes.sliders':
 case 'hidromasajes.editarContenido': 
     $hidro_active= 'active';
 break;
+case 'platos.index':
+case 'platos.create':
+case 'platos.edit':
+case 'platos.sliders': 
+case 'platos.editarContenido': 
+    $platos_active= 'active';
+break;
+case 'espejos.index':
+case 'espejos.create':
+case 'espejos.edit':
+case 'espejos.sliders': 
+case 'espejos.editarContenido': 
+    $espejos_active= 'active';
+break;
+case 'placard.index':
+case 'placard.create':
+case 'placard.edit':
+case 'placard.sliders': 
+case 'placard.editarContenido': 
+    $placard_active= 'active';
+break;
 case 'vermetadatos':
     $metadatos_active= 'active';
     break;
@@ -146,6 +167,32 @@ case 'verusuarios':
                         </ul>
                     </div>
                 </li>
+                <li class="nav-item {{$platos_active ?? ''}} ">
+                    <a data-toggle="collapse" href="#Platos">
+                        <i class="fas fa-building"></i>
+                        <p>Platos de Ducha</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="Platos">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{route('platos.sliders')}}">
+                                        <span class="sub-item">Sliders</span>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="{{route('platos.editarContenido')}}">
+                                    <span class="sub-item">Contenido Seccion</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('platos.index')}}">
+                                    <span class="sub-item">Productos</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                 <li class="nav-item {{$vanitorys_active ?? ''}} ">
                     <a data-toggle="collapse" href="#vanitorys">
                         <i class="fas fa-building"></i>
@@ -166,6 +213,58 @@ case 'verusuarios':
                             </li>
                             <li>
                                 <a href="{{route('vanitorys.index')}}">
+                                    <span class="sub-item">Productos</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item {{$espejos_active ?? ''}} ">
+                    <a data-toggle="collapse" href="#espejos">
+                        <i class="fas fa-building"></i>
+                        <p>Espejos</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="espejos">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{route('espejos.sliders')}}">
+                                        <span class="sub-item">Sliders</span>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="{{route('espejos.editarContenido')}}">
+                                    <span class="sub-item">Contenido Seccion</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('espejos.index')}}">
+                                    <span class="sub-item">Productos</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item {{$placard_active ?? ''}} ">
+                    <a data-toggle="collapse" href="#placard">
+                        <i class="fas fa-building"></i>
+                        <p>Placard</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="placard">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{route('placard.sliders')}}">
+                                        <span class="sub-item">Sliders</span>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="{{route('placard.editarContenido')}}">
+                                    <span class="sub-item">Contenido Seccion</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('placard.index')}}">
                                     <span class="sub-item">Productos</span>
                                 </a>
                             </li>
