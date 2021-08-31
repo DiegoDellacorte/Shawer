@@ -25,6 +25,10 @@ Route::get('barandas','BarandasController@vistaBaranda')->name('barandas');
 Route::get('baranda/{id}','BarandasController@show')->name('baranda');
 Route::get('hidromasajes','HidroMasajesController@vistaSeccion')->name('hidromasajes');
 Route::get('hidromasaje/{id}','HidroMasajesController@show')->name('hidromasaje');
+Route::get('vanitorys','VanitorysController@vistaSeccion')->name('vanitorys');
+Route::get('vanitory/{id}','VanitorysController@show')->name('vanitory');
+
+
 Route::get('empresa','EmpresaController@vistaEmpresa')->name('empresa');
 Route::get('contacto','ContactoController@vistaContacto')->name('contacto');
 Route::get('categorias','CategoriasController@vistaCategorias')->name('categorias');

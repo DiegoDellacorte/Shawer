@@ -98,4 +98,11 @@ class HidroMasajesController extends Controller
         $hidromasajes=Hidromasaje::orderby('orden',"ASC")->get();
         return view('front.hidromasajes',compact('contactos','iconoSup','iconoInf','sliders','seccionHidromasaje','hidromasajes'));
     }
+    public function show($id){
+        $contactos=Contacto::all();
+        $iconoSup=Logos::find(1);
+        $iconoInf=Logos::find(2);
+        $hidromasaje=Hidromasaje::find($id);
+        return view('front.hidromasaje',compact('contactos','iconoSup','iconoInf','hidromasaje'));
+    }
 }

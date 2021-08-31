@@ -16,7 +16,7 @@
             <div class="card">
                 <div class="card-header">
                     <div>
-                        Agregar Hidromasaje
+                        Editar Hidromasaje
                     </div>
                     <div class="float-right">
                         <a class="btn btn-outline-info" href="{{route('hidromasajes.index')}}">

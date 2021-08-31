@@ -70,10 +70,12 @@ $(document).ready(function () {
         var orden=$('#editar-orden').val();
         var imagen=$('#editar-imagen');
         var texto= $('#summernote-edit').summernote('code');
+        var pagina=$('#pagina').val();
         form.append('_method', 'PUT');
         form.append('orden', orden);
         form.append('editar-imagen', imagen[0].files[0]);
         form.append('texto',texto);
+        form.append('pagina',pagina);
         $.ajax({
             type: "POST",
             url: "actualizarslider/"+id,

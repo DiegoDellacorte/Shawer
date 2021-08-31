@@ -41,7 +41,7 @@ class SlidersController extends Controller
        $slider->delete();
    }
    public function ActualizarSlider(Request $request,$id){
-       $slider= Sliders::findorFail($id);
+       $slider= Sliders::find($id);
        if($archivo=$request->file('editar-imagen')){
            $nombre=$archivo->getClientOriginalName();
            $archivo->move('images/sliders',$nombre);

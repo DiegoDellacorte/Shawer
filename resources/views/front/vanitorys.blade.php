@@ -16,7 +16,7 @@
                             <div class="col-md-4 ms-5">
                                 <div class="imgPrincipal_titulo" style="margin-top:250px">{!!$slider->texto!!}</div>
                                 <div style="color:white;margin-top:130px; font-family: 'Gotham-Book';font-size:16px">
-                                    INICIO|HIDROMASAJES
+                                    INICIO|VANITORYS
                                 </div>
                             </div>
                         </div>
@@ -43,19 +43,19 @@
         <div class="row">
             <div class="col-md-12 mt-5 text-center animate__animated animate__fadeInRight animate__slow">
                 <div class="seccion-titulo">
-                   HIDROMASAJES
+                   VANITORYS
                 </div>
             </div>
             <div class="col-md-6 mt-5 animate__animated animate__fadeInRight animate__slow">
-                <img class="seccion-img_dos d-block ms-auto" src="{{asset(Storage::url($seccionHidromasaje->img_dos))}}">
+                <img class="seccion-img_dos d-block ms-auto" src="{{asset(Storage::url($seccionVanitorys->img_dos))}}">
             </div>
             <div class="col-md-6 mt-5 animate__animated animate__fadeInRight animate__slow">
-                <div class="seccion-titulo_texto"> {{$seccionHidromasaje->titulo}}</div>
-                <div class="seccion-texto_descripcion">{!!$seccionHidromasaje->texto!!}</div>
+                <div class="seccion-titulo_texto"> {{$seccionVanitorys->titulo}}</div>
+                <div class="seccion-texto_descripcion">{!!$seccionVanitorys->texto!!}</div>
             </div>
             <div class="col-md-6 animate__animated animate__fadeInLeft animate__slow">
-                <img class="img-fluid seccion-img_dos me-auto d-md-block d-none" style="position: relative;z-index:1000;top:-120px" src="{{asset(Storage::url($seccionHidromasaje->img_uno))}}">
-                <img class="img-fluid seccion-img_dos me-auto d-block d-md-none mb-5"  src="{{asset(Storage::url($seccionHidromasaje->img_uno))}}">
+                <img class="img-fluid seccion-img_dos me-auto d-md-block d-none" style="position: relative;z-index:1000;top:-120px" src="{{asset(Storage::url($seccionVanitorys->img_uno))}}">
+                <img class="img-fluid seccion-img_dos me-auto d-block d-md-none mb-5"  src="{{asset(Storage::url($seccionVanitorys->img_uno))}}">
             </div>
         </div>
     </div>
@@ -68,10 +68,10 @@
             @php
                 $i=1;
             @endphp
-            @foreach ($hidromasajes as $hidromasaje)
+            @foreach ($vanitorys as $vanitory)
                 <div class="col-md-4 mx-0 px-0 contenedor">
-                    <a href="{{route('hidromasaje',$hidromasaje->id)}}" style="text-decoration:none">
-                    <div  class="image" style="background-image: url({{asset(Storage::url($hidromasaje->img_principal))}});
+                    <a href="{{route('vanitory',$vanitory->id)}}" style="text-decoration:none">
+                    <div  class="image" style="background-image: url({{asset(Storage::url($vanitory->img_principal))}});
                         background-repeat:no-repeat;
                         background-position:center;
                         height:316px">
@@ -86,7 +86,7 @@
                         </div>
                         <div class="col-md-12" style="position: relative;top:220px">
                             <div class="Seccion-tituloProducto">
-                                {{$hidromasaje->titulo}}
+                                {{$vanitory->titulo}}
                             </div>
                         </div>
                      

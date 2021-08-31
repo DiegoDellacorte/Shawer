@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contacto;
+use App\Models\Logos;
 use App\Models\Seccion;
 use App\Models\Sliders;
 use App\Models\Vanitory;
@@ -86,5 +88,21 @@ class VanitorysController extends Controller
         $vanitory=Vanitory::find($id);
         Storage::delete($vanitory->img_uno,$vanitory->img_dos,$vanitory->img_principal);
         $vanitory->delete();
+    }
+    public function vistaSeccion(){
+        $contactos=Contacto::all();
+        $iconoSup=Logos::find(1);
+        $iconoInf=Logos::find(2);
+        $sliders= Sliders::where('pagina','vanitorys')->orderby('orden',"ASC")->get();
+        $seccionVanitorys=Seccion::find(3);
+        $vanitorys=Vanitory::orderby('orden',"ASC")->get();
+        return view('front.vanitorys',compact('contactos','iconoSup','iconoInf','sliders','seccionVanitorys','vanitorys'));
+    }
+    public function show($id){
+        $contactos=Contacto::all();
+        $iconoSup=Logos::find(1);
+        $iconoInf=Logos::find(2);
+        $vanitory=Vanitory::find($id);
+        return view('front.vanitory',compact('contactos','iconoSup','iconoInf','vanitory'));
     }
 }
