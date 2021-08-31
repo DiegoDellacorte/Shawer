@@ -94,6 +94,6 @@ class InicioController extends Controller
         $contactos=Contacto::all();
         $iconoSup=Logos::find(1);
         $iconoInf=Logos::find(2);
-        return view('inicio',compact('contactos','sliders','iconoSup','iconoInf','seccionInicio','serviciosInicio','metadato','categorias','productos_destacados'));
+        return view('layouts.plantilla',compact('contactos','sliders','iconoSup','iconoInf','metadato'));
     }
 }

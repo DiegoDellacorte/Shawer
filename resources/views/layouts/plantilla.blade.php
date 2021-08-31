@@ -17,124 +17,14 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!--Jquery-->
     <script src="{{asset('js/jquery/jquery.js')}}"></script>
-    <title>Quamaq</title>
+    <!--Animate CSS-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>Shawer</title>
   </head>
   <body>
-    
+    @include('front.partials.header')
     @yield('contenido')
-    <footer>
-        
-        {{-- <div class="container-fluid " style="background-image: url({{asset(('images/footer.svg'))}});
-        padding-top:50px;
-        padding-bottom:100px;
-        background-repeat:no-repeat;
-        background-size:contain;
-        background-position:bottom;
-       "> --}}
-       <div class="container-fluid py-5 ps-5 " style="background-color: #444444">
-            
-            <div class="row">
-                <div class="col-md-4">
-                    <a href="{{route('inicio')}}"> <img class="img-fluid" src="{{asset(Storage::url($iconoInf->icono))}}"></a>
-                </div>
-                <div class="col-md-4">
-                    <div class="pie_titulo">Mapa del sitio</div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class=""><a class="pie_secciones" href="{{route('inicio')}}">Home</a></div>
-                            <div class=""><a class="pie_secciones" href="{{route('empresa')}}">Empresa</a></div>
-                            <div class=""><a class="pie_secciones" href="{{route('categorias')}}">Productos</a></div>
-                            <div class=""><a class="pie_secciones" href="{{route('servicios')}}">Servicios</a></div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class=""><a class="pie_secciones" href="{{route('clientes')}}">Clientes</a></div>
-                            <div class=""><a class="pie_secciones" href="{{route('presupuesto')}}">Solicitar Presupuesto</a></div>
-                            <div class=""><a class="pie_secciones" href="{{route('contacto')}}">Contacto</a></div>
-
-                        </div>
-                    </div>
-                
-                  
-                </div>
-                <div class="col-md-3">
-                    <div class="pie_titulo">QUAMAQ</div>
-                    <div class="row">
-                        @foreach ($contactos as $contacto)
-                        @switch($contacto->dato)
-                            @case("direccion")
-                                <div class="col-md-1 col-1 mt-2">
-                                    <i class="fas fa-map-marker-alt" style="color: #399D7F"></i>
-                                </div>
-                                <div class="col-md-11 col-11 mt-2 pe-5">
-                                    <a class="pie-enlacecontacto" href="https://goo.gl/maps/x1JQBUKA48QzYs8c7">{{$contacto->texto}}</a>
-                                </div>
-                              
-                                @break
-                            @case("email")
-                                <div class="col-md-1 col-1 mt-2">
-                                    <i class="fas fa-envelope" style="color: #399D7F"></i>
-                                </div>
-                                <div class="col-md-11 col-11 mt-2">
-                                    <a class="pie-enlacecontacto" href="mailto:{{$contacto->texto}}">{{$contacto->texto}}</a>
-                                </div>
-                                @break
-                            @case("telefono_uno")
-                                <div class="col-md-1 col-1 mt-2">
-                                    <i class="fas fa-phone-alt" style="color: #399D7F"></i>
-                                </div>
-                                <div class="col-md-11 col-11 mt-2">
-                                    <a class="pie-enlacecontacto" href="tel:{{$contacto->texto}}">{{$contacto->texto}}</a>
-                                </div>
-                                @break
-                                @case("telefono_dos")
-                                <div class="col-md-1 col-1 mt-2">
-                                   
-                                </div>
-                                <div class="col-md-11 col-11 mt-2">
-                                    <a class="pie-enlacecontacto" href="tel:{{$contacto->texto}}">{{$contacto->texto}}</a>
-                                </div>
-                                @break
-                            @default
-                                
-                        @endswitch
-                    @endforeach
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 my-3">
-                    <div style="border-top:2px solid white;width:90%">
-                </div>
-                <div class="col-md-4 mt-3">
-                    <div class="d-flex align-items-center">
-                        <div class="seguinos_en me-3" style="font-family: 'Poppins-Light'">Seguinos en</div>
-                        @foreach ($contactos as $contacto)
-                        @if ($contacto->dato=="instagram")
-                            <a href="{{$contacto->texto}}">
-                                <i class="fab fa-instagram" style="color: white"></i>
-                            </a>
-                            <div class="mx-2" style="height: 18px;background-color:white;width:1px;"></div>
-                        @endif
-                       
-                       @if ($contacto->dato=="facebook")
-                           <a href="{{$contacto->texto}}">
-                            <i class="fab fa-facebook-f " style="color: white"></i>
-                            </a>
-                            <div class="mx-2" style="height: 18px;background-color:white;width:1px;"></div>
-                       @endif
-                       @if ($contacto->dato=="youtube")
-                       <a href="{{$contacto->texto}}">
-                        <i class="fab fa-youtube" style="color: white"></i>
-                        </a>
-                        <div class="mx-2" style="height: 18px;background-color:white;width:1px;"></div>
-                   @endif
-                   @endforeach
-                    </div>
-                   
-                </div>
-            </div>
-        </div>
-    </footer>
+    @include('front.partials.footer')
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

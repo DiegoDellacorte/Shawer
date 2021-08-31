@@ -124,3 +124,23 @@
     src: url('Tipografia/Poppins-Italic.ttf');
     src: local("Poppins-Italic"), url("../css/Tipografia/Poppins-Italic.ttf") format("truetype");
 }
+@font-face{
+    font-family: Gotham-Light;
+    src: url('Tipografia/GothamLight.ttf');
+    src: local("GothamLight"), url("../css/Tipografia/GothamLight.ttf") format("truetype");
+}
+@font-face{
+    font-family: Gotham-Bold;
+    src: url('Tipografia/GothamBold.ttf');
+    src: local("GothamBold"), url("../css/Tipografia/GothamBold.ttf") format("truetype");
+}
+@font-face{
+    font-family: Gotham-Medium;
+    src: url('Tipografia/GothamMedium.ttf');
+    src: local("GothamMedium"), url("../css/Tipografia/GothamMedium.ttf") format("truetype");
+}
+@font-face{
+    font-family: Gotham-XLight;
+    src: url('Tipografia/Gotham-XLight.otf');
+    src: local("Gotham-XLight"), url("../css/Tipografia/Gotham-XLight.otf") format("truetype");
+}
