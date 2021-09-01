@@ -25,6 +25,7 @@
   </head>
   <body>
     @include('front.partials.header')
+    {{-- @include('front.inicio_multiple_slider') --}}
     @yield('contenido')
     @include('front.partials.footer')
     <!-- Optional JavaScript; choose one of the two! -->

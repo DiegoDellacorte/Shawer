@@ -11,6 +11,7 @@ use App\Models\Logos;
 use App\Models\Metadato;
 use App\Models\Producto;
 use App\Models\ProductoInicio;
+use App\Models\Proyecto;
 use App\Models\SeccionInicio;
 use App\Models\Sliders;
 use App\Models\SubCategoria;
@@ -91,9 +92,13 @@ class InicioController extends Controller
 
         $sliders= Sliders::where('pagina','inicio')->orderby('orden',"ASC")->get();
         $metadato=Metadato::where('seccion',"inicio")->first()->get();
+        $productoInicio= ProductoInicio::all();
+        $proyectos= Proyecto::all();
+
         $contactos=Contacto::all();
         $iconoSup=Logos::find(1);
         $iconoInf=Logos::find(2);
-        return view('layouts.plantilla',compact('contactos','sliders','iconoSup','iconoInf','metadato'));
+        $marca = Galeria::all();
+        return view('front.inicio_multiple_slider',compact('contactos','sliders','iconoSup','iconoInf','metadato','marca','productoInicio','proyectos'));
     }
 }
