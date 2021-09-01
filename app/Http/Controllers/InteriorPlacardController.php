@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contacto;
 use App\Models\InteriorPlacard;
+use App\Models\Logos;
 use App\Models\Seccion;
 use App\Models\Sliders;
 use Illuminate\Http\Request;
@@ -94,5 +96,21 @@ class InteriorPlacardController extends Controller
     public function sliders(){
         $sliders= Sliders::where('pagina','interiorPlacard')->orderby('orden',"ASC")->get();
         return view('admin.placards.sliders',compact('sliders'));
+    }
+    public function vistaSeccion(){
+        $contactos=Contacto::all();
+        $iconoSup=Logos::find(1);
+        $iconoInf=Logos::find(2);
+        $sliders= Sliders::where('pagina','interiorPlacard')->orderby('orden',"ASC")->get();
+        $seccionPlacard=Seccion::find(6);
+        $placards =InteriorPlacard::orderby('orden',"ASC")->get();
+        return view('front.placards',compact('contactos','iconoSup','iconoInf','sliders','seccionPlacard','placards'));
+    }
+    public function show($id){
+        $contactos=Contacto::all();
+        $iconoSup=Logos::find(1);
+        $iconoInf=Logos::find(2);
+        $placard=InteriorPlacard::find($id);
+        return view('front.placard',compact('contactos','iconoSup','iconoInf','placard'));
     }
 }

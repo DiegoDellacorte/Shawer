@@ -39,7 +39,7 @@ switch ($routeName) {
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav ms-auto pe-md-5 ">
                 <li class="nav-item {{$empresa_active ?? ''}}">
-                <a class="nav-link " href="{{route('empresa')}}">Mamparas</a>
+                <a class="nav-link " href="{{route('mamparas')}}">Mamparas</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link {{$productos_active ?? ''}}" href="{{route('barandas')}}">Barandas</a>
@@ -48,19 +48,19 @@ switch ($routeName) {
                 <a class="nav-link {{$servicios_active ?? ''}}" href="{{route('hidromasajes')}}">Hidrosajes</a>
                 </li>
                 <li class="nav-item {{$clientes_active ?? ''}}">
-                    <a class="nav-link" href="{{route('clientes')}}">Platos de Ducha</a>
+                    <a class="nav-link" href="{{route('platos')}}">Platos de Ducha</a>
                   </li>
                 <li class="nav-item {{$videos_active ?? ''}}">
                   <a class="nav-link" href="{{route('vanitorys')}}">Vanitorys</a>
                 </li>
                 <li class="nav-item {{$espejos_active ?? ''}}">
-                    <a class="nav-link" href="{{route('presupuesto')}}">Espejos</a>
+                    <a class="nav-link" href="{{route('espejos')}}">Espejos</a>
                 </li>
                 <li class="nav-item {{$interior_active ?? ''}}">
-                    <a class="nav-link" href="{{route('contacto')}}">Interior de Placard</a>
+                    <a class="nav-link" href="{{route('placards')}}">Interior de Placard</a>
                 </li>
                 <li class="nav-item {{$proyectos_active ?? ''}}">
-                    <a class="nav-link" href="{{route('contacto')}}">Proyectos</a>
+                    <a class="nav-link" href="{{route('proyectos')}}">Proyectos</a>
                 </li>
                 <li class="nav-item {{$contacto_active ?? ''}}">
                     <a class="nav-link" href="{{route('contacto')}}">Contacto</a>

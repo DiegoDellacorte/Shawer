@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contacto;
+use App\Models\Logos;
 use App\Models\Plato;
 use App\Models\Seccion;
 use App\Models\Sliders;
@@ -94,5 +96,21 @@ class PlatosController extends Controller
     public function sliders(){
         $sliders= Sliders::where('pagina','platos')->orderby('orden',"ASC")->get();
         return view('admin.platos de ducha.sliders',compact('sliders'));
+    }
+    public function vistaSeccion(){
+        $contactos=Contacto::all();
+        $iconoSup=Logos::find(1);
+        $iconoInf=Logos::find(2);
+        $sliders= Sliders::where('pagina','platos')->orderby('orden',"ASC")->get();
+        $seccionPlatos=Seccion::find(4);
+        $platos =Plato::orderby('orden',"ASC")->get();
+        return view('front.platos',compact('contactos','iconoSup','iconoInf','sliders','seccionPlatos','platos'));
+    }
+    public function show($id){
+        $contactos=Contacto::all();
+        $iconoSup=Logos::find(1);
+        $iconoInf=Logos::find(2);
+        $plato=Plato::find($id);
+        return view('front.plato',compact('contactos','iconoSup','iconoInf','plato'));
     }
 }

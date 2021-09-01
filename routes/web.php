@@ -25,8 +25,18 @@ Route::get('barandas','BarandasController@vistaBaranda')->name('barandas');
 Route::get('baranda/{id}','BarandasController@show')->name('baranda');
 Route::get('hidromasajes','HidroMasajesController@vistaSeccion')->name('hidromasajes');
 Route::get('hidromasaje/{id}','HidroMasajesController@show')->name('hidromasaje');
+Route::get('platos-de-ducha','PlatosController@vistaSeccion')->name('platos');
+Route::get('platos-de-ducha/{id}','PlatosController@show')->name('plato');
+Route::get('espejos','EspejosController@vistaSeccion')->name('espejos');
+Route::get('espejo/{id}','EspejosController@show')->name('espejo');
 Route::get('vanitorys','VanitorysController@vistaSeccion')->name('vanitorys');
 Route::get('vanitory/{id}','VanitorysController@show')->name('vanitory');
+Route::get('placards','InteriorPlacardController@vistaSeccion')->name('placards');
+Route::get('placard/{id}','InteriorPlacardController@show')->name('placard');
+Route::get('proyectos','ProyectosController@vistaSeccion')->name('proyectos');
+Route::get('proyecto/{id}','ProyectosController@show')->name('proyecto');
+Route::get('mamparas','MamparasController@vistaSeccion')->name('mamparas');
+Route::get('mampara/{id}','MamparasController@show')->name('mampara');
 
 
 Route::get('empresa','EmpresaController@vistaEmpresa')->name('empresa');

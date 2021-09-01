@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contacto;
+use App\Models\Logos;
 use App\Models\Proyecto;
 use App\Models\Sliders;
 use Illuminate\Http\Request;
@@ -69,7 +71,11 @@ class ProyectosController extends Controller
      */
     public function show($id)
     {
-      
+        $proyecto=Proyecto::find($id); 
+        $contactos=Contacto::all();
+        $iconoSup=Logos::find(1);
+        $iconoInf=Logos::find(2);
+        return view('front.proyecto',compact('proyecto','contactos','iconoSup','iconoInf'));
     }
 
     /**
@@ -81,6 +87,7 @@ class ProyectosController extends Controller
     public function edit($id)
     {
         $proyecto=Proyecto::find($id);
+        
         return view('admin.proyectos.edit',compact('proyecto'));
     }
 
@@ -130,5 +137,13 @@ class ProyectosController extends Controller
     public function sliders(){
         $sliders= Sliders::where('pagina','proyectos')->orderby('orden',"ASC")->get();
         return view('admin.proyectos.sliders',compact('sliders'));
+    }
+    public function vistaSeccion(){
+        $contactos=Contacto::all();
+        $iconoSup=Logos::find(1);
+        $iconoInf=Logos::find(2);
+        $proyectos=Proyecto::orderby('orden',"ASC")->get();
+        $sliders= Sliders::where('pagina','proyectos')->orderby('orden',"ASC")->get();
+        return view('front.proyectos',compact('proyectos','sliders','contactos','iconoSup','iconoInf'));
     }
 }

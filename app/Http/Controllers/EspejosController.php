@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contacto;
 use App\Models\Espejo;
+use App\Models\Logos;
 use App\Models\Seccion;
 use App\Models\Sliders;
 use Illuminate\Http\Request;
@@ -94,5 +96,21 @@ class EspejosController extends Controller
     public function sliders(){
         $sliders= Sliders::where('pagina','espejos')->orderby('orden',"ASC")->get();
         return view('admin.espejos.sliders',compact('sliders'));
+    }
+    public function vistaSeccion(){
+        $contactos=Contacto::all();
+        $iconoSup=Logos::find(1);
+        $iconoInf=Logos::find(2);
+        $sliders= Sliders::where('pagina','espejos')->orderby('orden',"ASC")->get();
+        $seccionEspejos=Seccion::find(5);
+        $espejos =Espejo::orderby('orden',"ASC")->get();
+        return view('front.espejos',compact('contactos','iconoSup','iconoInf','sliders','seccionEspejos','espejos'));
+    }
+    public function show($id){
+        $contactos=Contacto::all();
+        $iconoSup=Logos::find(1);
+        $iconoInf=Logos::find(2);
+        $espejo=Espejo::find($id);
+        return view('front.espejo',compact('contactos','iconoSup','iconoInf','espejo'));
     }
 }

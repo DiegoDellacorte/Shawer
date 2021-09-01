@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contacto;
+use App\Models\Logos;
 use App\Models\Mampara;
 use App\Models\Seccion;
 use App\Models\Sliders;
@@ -95,5 +97,21 @@ class MamparasController extends Controller
     public function sliders(){
         $sliders= Sliders::where('pagina','mamparas')->orderby('orden',"ASC")->get();
         return view('admin.mamparas.sliders',compact('sliders'));
+    }
+    public function vistaSeccion(){
+        $contactos=Contacto::all();
+        $iconoSup=Logos::find(1);
+        $iconoInf=Logos::find(2);
+        $sliders= Sliders::where('pagina','mamparas')->orderby('orden',"ASC")->get();
+        $seccionMamparas=Seccion::find(4);
+        $mamparas=Mampara::orderby('orden',"ASC")->get();
+        return view('front.mamparas',compact('contactos','iconoSup','iconoInf','sliders','seccionMamparas','mamparas'));
+    }
+    public function show($id){
+        $contactos=Contacto::all();
+        $iconoSup=Logos::find(1);
+        $iconoInf=Logos::find(2);
+        $mampara=Mampara::find($id);
+        return view('front.mampara',compact('contactos','iconoSup','iconoInf','mampara'));
     }
 }
